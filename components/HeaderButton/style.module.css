@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "roundThin";
+    src: url("/roundThin.otf") format("woff2");
+}
+
+
+.button {
+    float: right;
+    padding: 20px;
+    background-color: #fff;
+    color: black;
+    transition-duration: 0.25s;
+    font-size: 28px;
+    font-family: roundThin;
+    vertical-align: middle;
+}
+
+.button:hover {
+    background-color: #03bafc;
+    color: white;
+    font-weight: bolder;
+}
