@@ -1,11 +1,17 @@
-import { func } from "prop-types";
-import styles from './style.module.css'
-import classNames from 'classnames'
+import useUser from "../../../providers/useUser";
+import fetchJson from "../../../providers/fetchJson";
 import { useRef, useState } from "react";
+import React from "react";
 
 
 export default function Login() {
     const [rightPanelActive, setRightPanelActive] = useState(false)
+    const { mutateUser } = useUser({
+        redirectTo: "/",
+        redirectIfFound: true,
+    });
+    const [errorMsg, setErrorMsg] = useState("");
+
 
     var signUpButton = useRef(null)
     var signInButton = useRef(null)
@@ -17,35 +23,80 @@ export default function Login() {
     function slideRight() {
         setRightPanelActive(false)
     }
+
+    async function handleLogin(e) {
+        e.preventDefault();
+
+        // Get form data
+        const email = e.currentTarget.email.value;
+        const password = e.currentTarget.password.value;
+
+        const body = {
+            email: email,
+            password: password,
+        };
+
+        try {
+            await mutateUser(
+                fetchJson("/api/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(body),
+                })
+            );
+        } catch (error) {
+            console.error("An unexpected error happened:", error);
+            setErrorMsg(error.data.message);
+        }
+    }
+
+    async function handleSignUp(e) {
+        e.preventDefault();
+
+        // Get form data
+        const email = e.currentTarget.email.value;
+        const password = e.currentTarget.password.value;
+        const name = e.currentTarget.name.value;
+
+        const body = {
+            name: email,
+            email: email,
+            password: password,
+        };
+
+        try {
+            await mutateUser(
+                fetchJson("/api/signup", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(body),
+                })
+            );
+        } catch (error) {
+            console.error("An unexpected error happened:", error);
+            setErrorMsg(error.data.message);
+        }
+    }
+
     return (
         <div id='loginMain'>
             <div class={rightPanelActive ? 'container right-panel-active' : 'container'} id="container" ref={container} >
                 <div class="form-container sign-up-container">
-                    <form action="#">
+                    <form onSubmit={handleSignUp}>
                         <h1>Create Account</h1>
-                        <div class="social-container">
-                            <a href="#" class="social"><img width="20px" height="20px" src='/facebook_icon.svg' class="fab fa-facebook-f"></img></a>
-                            <a href="#" class="social"><img width="20px" height="20px" src='/google_icon.svg' class="fab fa-google-plus-g"></img></a>
-                            <a href="#" class="social"><img width="20px" height="20px" src='/linkedin_icon.svg' class="fab fa-linkedin-in"></img></a>
-                        </div>
-                        <span>or use your email for registration</span>
-                        <input type="text" placeholder="Name" />
-                        <input type="email" placeholder="Email" />
-                        <input type="password" placeholder="Password" />
+
+                        <input name="name" type="text" placeholder="Name" required/>
+                        <input name="email" type="email" placeholder="Email" required/>
+                        <input name="password" type="password" placeholder="Password" required/>
                         <button>Sign Up</button>
                     </form>
                 </div>
                 <div class="form-container sign-in-container">
-                    <form action="#">
+                    <form onSubmit={handleLogin}>
                         <h1>Sign in</h1>
-                        <div class="social-container">
-                            <a href="#" class="social"><img width="20px" height="20px" src='/facebook_icon.svg' class="fab fa-facebook-f"></img></a>
-                            <a href="#" class="social"><img width="20px" height="20px" src='/google_icon.svg' class="fab fa-google-plus-g"></img></a>
-                            <a href="#" class="social"><img width="20px" height="20px" src='/linkedin_icon.svg' class="fab fa-linkedin-in"></img></a>
-                        </div>
-                        <span>or use your account</span>
-                        <input type="email" placeholder="Email" />
-                        <input type="password" placeholder="Password" />
+
+                        <input name="email"type="email" placeholder="Email" required/>
+                        <input name="password"type="password" placeholder="Password" required/>
                         <a href="#">Forgot your password?</a>
                         <button>Sign In</button>
                     </form>
@@ -53,13 +104,13 @@ export default function Login() {
                 <div class="overlay-container">
                     <div class="overlay">
                         <div class="overlay-panel overlay-left">
-                            <h1>Welcome Back!</h1>
-                            <p>To keep connected with us please login with your personal info</p>
+                            <h1>Welcome</h1>
+                            <p>Welcom to Confirmly, a fast, secure verification system. If you already have an account, click the button below</p>
                             <button class="ghost" id="signIn" ref={signInButton} onClick={() => slideRight()}>Sign In</button>
                         </div>
                         <div class="overlay-panel overlay-right">
-                            <h1>Hello, Friend!</h1>
-                            <p>Enter your personal details and start journey with us</p>
+                            <h1 class="logo">Confirmly</h1>
+                            <p>If you don't have an account, click the button below to join</p>
                             <button class="ghost" id="signUp" ref={signUpButton} onClick={() => slideLeft()}>Sign Up</button>
                         </div>
                     </div>
@@ -110,6 +161,16 @@ export default function Login() {
                         font-size: 14px;
                         text-decoration: none;
                         margin: 15px 0;
+                    }
+
+                    @font-face {
+                        font-family: "logoFont";
+                        src: url("/logoFont.ttf") format("woff2");
+                    }
+
+                    .logo{
+                        font-family: logoFont;
+                        font-size: 70px;
                     }
 
                     button {

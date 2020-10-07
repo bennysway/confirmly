@@ -1,14 +1,25 @@
 import { useRef } from 'react'
+import useUser from '../../providers/useUser'
 import HeaderButton from '../../components/HeaderButton'
 import HeaderDropDownButton from '../../components/HeaderDropDownButton'
 import styles from './style.module.css'
 
 export default function PageHeader() {
     const headerRef = useRef(null)
-    const accountDropDown = {
-        title: "account",
-        items: [{ text: "Login", href:"/Login" }, { text: "Sign Up", href:"/SignUp" },]
+    const { user } = useUser({ redirectTo: "/Account/Login" });
+    var accountDropDown = {}
+    if (!user || user.isLoggedIn === false) {
+        accountDropDown = {
+            title: "account",
+            items: [{ text: `Login`, href:"/Account/Login" }, { text: "Sign Up", href:"/Account/SignUp" },]
+        }
+    } else {
+        accountDropDown = {
+            title: "account",
+            items: [{ text: `Profile`, href:"/Account/Profile" }, { text: "Settings", href:"/Account/Settings" },  { text: "Log Out", href:"/Account/Logout" },]
+        }
     }
+    console.log(user)
 
     return (
         <>

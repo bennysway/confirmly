@@ -7,7 +7,7 @@ export default function Home() {
 
   
   return (
-    <div style={{overflowY: "hidden"}}>
+    <div>
       <PageHeader />
       <Wave />
     </div>
