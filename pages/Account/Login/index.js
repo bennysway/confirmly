@@ -45,7 +45,7 @@ export default function Login() {
                 })
             );
         } catch (error) {
-            console.error("An unexpected error happened:", error);
+            console.log("An unexpected error happened:", error);
             setErrorMsg(error.data.message);
         }
     }
