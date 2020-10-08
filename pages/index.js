@@ -1,6 +1,7 @@
 import useUser from '../providers/useUser'
 import PageHeader from '../widgets/PageHeader'
 import Wave from '../widgets/Wave'
+import WidePictureSlide from '../widgets/WidePictureSlide';
 
 export default function Home() {
 
@@ -10,7 +11,8 @@ export default function Home() {
     return (
       <div>
         <PageHeader user={currentUser} />
-        <div>{currentUser.isLoggedIn ? "Ys" : "No"}</div>
+        <div>Not Logged In</div>
+        <WidePictureSlide />
         <Wave />
       </div>
     )
@@ -19,7 +21,8 @@ export default function Home() {
     return (
       <div>
         <PageHeader user={user} />
-        <div>{user.isLoggedIn ? "Ys" : "No"}</div>
+        <div>Logged In</div>
+        <WidePictureSlide />
         <Wave />
       </div>
     )

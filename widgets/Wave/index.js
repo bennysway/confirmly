@@ -8,6 +8,11 @@ export default function Wave() {
                 <div className={styles.wave}></div>
                 <div className={styles.wave}></div>
             </div>
+            <style>
+                {`
+                body{overflow-x: hidden}
+                `}
+            </style>
         </div>
     )
 }

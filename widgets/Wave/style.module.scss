@@ -1,14 +1,10 @@
 // best seen at 1500px or less
 
 .container {
-    height: 100%;
-    background: radial-gradient(
-        ellipse at center,
-        rgba(255, 254, 234, 1) 0%,
-        rgba(255, 254, 234, 1) 35%,
-        #b7e8eb 100%
-    );
-    overflow: hidden;
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(0deg, rgba(183,232,235,1) 0%, rgba(255,255,255,1) 100%);
+    position: absolute;
 }
 
 .ocean {
@@ -33,6 +29,7 @@
 
 .wave:nth-of-type(2) {
     top: -175px;
+    position: absolute;
     animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
         swell 7s ease -1.25s infinite;
     opacity: 1;
