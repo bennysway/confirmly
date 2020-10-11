@@ -9,7 +9,7 @@ export default function HeaderDropDownButton({ dropDrowItem }) {
             element.func = dropDrowItem.items[index].func
             menus.push(<div key={element.text} onClick={element.func} className={styles.dropdownItem}>{element.text}</div>)
         } else {
-            menus.push(<Link key='`element.text`' href={element.href}><div key={element.text} className={styles.dropdownItem}>{element.text}</div></Link>)
+            menus.push(<Link key={element.text} href={element.href}><div key={element.text} className={styles.dropdownItem}>{element.text}</div></Link>)
         }
 
     }

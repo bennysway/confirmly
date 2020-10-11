@@ -11,7 +11,6 @@ export default function Home() {
     return (
       <div>
         <PageHeader user={currentUser} />
-        <div>Not Logged In</div>
         <WidePictureSlide />
         <Wave />
       </div>
@@ -21,7 +20,6 @@ export default function Home() {
     return (
       <div>
         <PageHeader user={user} />
-        <div>Logged In</div>
         <WidePictureSlide />
         <Wave />
       </div>
