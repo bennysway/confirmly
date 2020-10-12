@@ -38,18 +38,18 @@ export default function PageHeader({user}) {
     }
     const loggedAccountDropDown = {
         title: "account",
-        items: [{ text: `Profile`, href: "/Account/Profile" }, { text: "Settings", href: "/Account/Settings" }, { text: "Log Out", href: "", func: handleLogout },]
+        items: [{ text: `Dashboard`, href: "/Dashboard" }, { text: "Settings", href: "/Account/Settings" }, { text: "Log Out", href: "", func: handleLogout },]
     }
 
     return (
         <>
             <div ref={headerRef} id="header" className={styles.header}>
                 <h2>Confirmly</h2>
-                <HeaderButton buttonText="about" href="/Account/Login" />
-                <HeaderButton buttonText="contact" href="/Account/Login" />
-                <HeaderButton buttonText="partners" href="/Account/Login" />
-                <HeaderButton buttonText="services" href="/Account/Login" />
-                <HeaderButton buttonText="pricing" href="/Account/Login" />
+                <HeaderButton buttonText="about" href="/Home/About" />
+                <HeaderButton buttonText="contact" href="/Home/Contact" />
+                <HeaderButton buttonText="partners" href="/Home/Partners" />
+                <HeaderButton buttonText="services" href="/Home/Services" />
+                <HeaderButton buttonText="pricing" href="/Home/Pricing" />
                 <HeaderDropDownButton dropDrowItem={user.isLoggedIn ? loggedAccountDropDown : accountDropDown} />
             </div>
         </>

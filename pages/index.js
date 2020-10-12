@@ -1,4 +1,5 @@
 import useUser from '../providers/useUser'
+import PageFooter from '../widgets/PageFooter';
 import PageHeader from '../widgets/PageHeader'
 import Wave from '../widgets/Wave'
 import WidePictureSlide from '../widgets/WidePictureSlide';
@@ -11,8 +12,9 @@ export default function Home() {
     return (
       <div>
         <PageHeader user={currentUser} />
-        <WidePictureSlide />
+        {/*<WidePictureSlide />*/}
         <Wave />
+        <PageFooter />
       </div>
     )
 
@@ -20,8 +22,9 @@ export default function Home() {
     return (
       <div>
         <PageHeader user={user} />
-        <WidePictureSlide />
+        {/*<WidePictureSlide />*/}
         <Wave />
+        <PageFooter />
       </div>
     )
   }

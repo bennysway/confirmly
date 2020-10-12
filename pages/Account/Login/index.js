@@ -11,6 +11,7 @@ export default function Login() {
         redirectIfFound: true,
     });
     const [errorMsg, setErrorMsg] = useState("");
+    const [errorMsg1, setErrorMsg1] = useState("");
 
 
     var signUpButton = useRef(null)
@@ -46,7 +47,7 @@ export default function Login() {
             );
         } catch (error) {
             console.log("An unexpected error happened:", error);
-            setErrorMsg(error.data.message);
+            setErrorMsg("⚠️" + error.data.message);
         }
     }
 
@@ -74,7 +75,7 @@ export default function Login() {
             );
         } catch (error) {
             console.error("An unexpected error happened:", error);
-            setErrorMsg(error.data.message);
+            setErrorMsg1("⚠️" + error.data.message);
         }
     }
 
@@ -89,6 +90,7 @@ export default function Login() {
                         <input name="email" type="email" placeholder="Email" required/>
                         <input name="password" type="password" placeholder="Password" required/>
                         <button>Sign Up</button>
+                        <error>{errorMsg1}</error>
                     </form>
                 </div>
                 <div class="form-container sign-in-container">
@@ -99,13 +101,14 @@ export default function Login() {
                         <input name="password"type="password" placeholder="Password" required/>
                         <a href="#">Forgot your password?</a>
                         <button>Sign In</button>
+                        <error>{errorMsg}</error>
                     </form>
                 </div>
                 <div class="overlay-container">
                     <div class="overlay">
                         <div class="overlay-panel overlay-left">
                             <h1>Welcome</h1>
-                            <p>Welcom to Confirmly, a fast, secure verification system. If you already have an account, click the button below</p>
+                            <p>Welcome to Confirmly, a fast, secure verification system. If you already have an account, click the button below</p>
                             <button class="ghost" id="signIn" ref={signInButton} onClick={() => slideRight()}>Sign In</button>
                         </div>
                         <div class="overlay-panel overlay-right">
@@ -150,6 +153,16 @@ export default function Login() {
                         line-height: 20px;
                         letter-spacing: 0.5px;
                         margin: 20px 0 30px;
+                    }
+
+                    error {
+                        font-size: 14px;
+                        width: 100%;
+                        font-weight: 100;
+                        line-height: 20px;
+                        letter-spacing: 0.5px;
+                        margin: 20px 0 30px;
+                        color: red;
                     }
 
                     span {
