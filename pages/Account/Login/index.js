@@ -162,7 +162,7 @@ export default function Login() {
                         line-height: 20px;
                         letter-spacing: 0.5px;
                         margin: 20px 0 30px;
-                        color: red;
+                        color: #03bafc;
                     }
 
                     span {
