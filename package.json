@@ -13,6 +13,7 @@
     "dotenv": "^8.2.0",
     "firebase": "^7.22.1",
     "firebase-admin": "^9.2.0",
+    "jquery": "^3.5.1",
     "next": "9.5.3",
     "next-iron-session": "^4.1.9",
     "node-fetch": "^2.6.1",

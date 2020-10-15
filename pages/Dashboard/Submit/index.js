@@ -5,6 +5,7 @@ export default function Submit() {
 
     /* Jquery JS*/
     useScript("https://code.jquery.com/jquery-3.5.1.slim.min.js")
+    useScript("https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.0/perfect-scrollbar.min.js")
     /* Bootstrap JS*/
     useScript("https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js")
     useScript("https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js")
@@ -17,6 +18,7 @@ export default function Submit() {
     useScript("https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js")
     useScript("https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js")
     useScript("https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js")
+    useScript("dashboard/main.js")
 
 
     return (
@@ -278,7 +280,7 @@ export default function Submit() {
                             <div className="section__content section__content--p30">
                                 <div className="container-fluid">
                                     <div className="header-wrap">
-                                        <form className="form-header" action method="POST">
+                                        <form className="form-header" action="true" method="POST">
                                             <input className="au-input au-input--xl" type="text" name="search" placeholder="Search for datas & reports..." />
                                             <button className="au-btn--submit" type="submit">
                                                 <i className="zmdi zmdi-search" />
@@ -849,7 +851,7 @@ export default function Submit() {
                                                     <strong>Normal</strong> Form
                         </div>
                                                 <div className="card-body card-block">
-                                                    <form action method="post" className>
+                                                    <form action="true" method="post" className>
                                                         <div className="form-group">
                                                             <label htmlFor="nf-email" className=" form-control-label">Email</label>
                                                             <input type="email" id="nf-email" name="nf-email" placeholder="Enter Email.." className="form-control" />
