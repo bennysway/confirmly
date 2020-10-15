@@ -12,7 +12,7 @@ export default function Home() {
     return (
       <div>
         <PageHeader user={currentUser} />
-        {/*<WidePictureSlide />*/}
+        {<WidePictureSlide />}
         <Wave />
         <PageFooter />
       </div>
@@ -22,7 +22,7 @@ export default function Home() {
     return (
       <div>
         <PageHeader user={user} />
-        {/*<WidePictureSlide />*/}
+        {<WidePictureSlide />}
         <Wave />
         <PageFooter />
       </div>

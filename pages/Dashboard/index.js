@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import useScript from '../../hooks/useScript'
-
+import styles from './style.module.css'
 
 export default function Dashboard() {
 
@@ -55,7 +55,7 @@ export default function Dashboard() {
                             <div className="container-fluid">
                                 <div className="header-mobile-inner">
                                     <a className="logo" href="index.html">
-                                        Confirmly
+                                    <h2 className={styles.logo}>Confirmly</h2>
                                     </a>
                                     <button className="hamburger hamburger--slider" type="button">
                                         <span className="hamburger-box">
@@ -169,7 +169,7 @@ export default function Dashboard() {
                     <aside className="menu-sidebar d-none d-lg-block">
                         <div className="logo">
                             <a href="#">
-                                Confirmly
+                            <h2 className={styles.logo}>Confirmly</h2>
                             </a>
                         </div>
                         <div className="menu-sidebar__content js-scrollbar1">

@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "logoFont";
+    src: url("/logoFont.ttf") format("woff2");
+}
+
+.logo {
+    font-family: logoFont;
+    color: #03bafc;
+    right: 0;
+    font-size: 50px;
+    transition-duration: 0.25s;
+}
+
+.logo:hover {
+    text-shadow: -2px -2px #03bafc20;
+    transform: translate(2px, 2px);
+  }
