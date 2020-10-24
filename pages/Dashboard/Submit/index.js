@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import useScript from '../../../hooks/useScript'
+import SidebarNav from '../../../widgets/SidebarNav'
 
 export default function Submit() {
 
@@ -175,100 +176,7 @@ export default function Submit() {
                         </div>
                         <div className="menu-sidebar__content js-scrollbar1">
                             <nav className="navbar-sidebar">
-                                <ul className="list-unstyled navbar__list">
-                                    <li className="has-sub">
-                                        <a className="js-arrow" href="#">
-                                            <i className="fas fa-tachometer-alt" />Dashboard</a>
-                                        <ul className="list-unstyled navbar__sub-list js-sub-list">
-                                            <li>
-                                                <a href="index.html">Dashboard 1</a>
-                                            </li>
-                                            <li>
-                                                <a href="index2.html">Dashboard 2</a>
-                                            </li>
-                                            <li>
-                                                <a href="index3.html">Dashboard 3</a>
-                                            </li>
-                                            <li>
-                                                <a href="index4.html">Dashboard 4</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="chart.html">
-                                            <i className="fas fa-chart-bar" />Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="table.html">
-                                            <i className="fas fa-table" />Tables</a>
-                                    </li>
-                                    <li className="active">
-                                        <a href="form.html">
-                                            <i className="far fa-check-square" />Forms</a>
-                                    </li>
-                                    <li>
-                                        <a href="calendar.html">
-                                            <i className="fas fa-calendar-alt" />Calendar</a>
-                                    </li>
-                                    <li>
-                                        <a href="map.html">
-                                            <i className="fas fa-map-marker-alt" />Maps</a>
-                                    </li>
-                                    <li className="has-sub">
-                                        <a className="js-arrow" href="#">
-                                            <i className="fas fa-copy" />Pages</a>
-                                        <ul className="list-unstyled navbar__sub-list js-sub-list">
-                                            <li>
-                                                <a href="login.html">Login</a>
-                                            </li>
-                                            <li>
-                                                <a href="register.html">Register</a>
-                                            </li>
-                                            <li>
-                                                <a href="forget-pass.html">Forget Password</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li className="has-sub">
-                                        <a className="js-arrow" href="#">
-                                            <i className="fas fa-desktop" />UI Elements</a>
-                                        <ul className="list-unstyled navbar__sub-list js-sub-list">
-                                            <li>
-                                                <a href="button.html">Button</a>
-                                            </li>
-                                            <li>
-                                                <a href="badge.html">Badges</a>
-                                            </li>
-                                            <li>
-                                                <a href="tab.html">Tabs</a>
-                                            </li>
-                                            <li>
-                                                <a href="card.html">Cards</a>
-                                            </li>
-                                            <li>
-                                                <a href="alert.html">Alerts</a>
-                                            </li>
-                                            <li>
-                                                <a href="progress-bar.html">Progress Bars</a>
-                                            </li>
-                                            <li>
-                                                <a href="modal.html">Modals</a>
-                                            </li>
-                                            <li>
-                                                <a href="switch.html">Switchs</a>
-                                            </li>
-                                            <li>
-                                                <a href="grid.html">Grids</a>
-                                            </li>
-                                            <li>
-                                                <a href="fontawesome.html">Fontawesome Icon</a>
-                                            </li>
-                                            <li>
-                                                <a href="typo.html">Typography</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                <SidebarNav />
                             </nav>
                         </div>
                     </aside>
@@ -455,46 +363,46 @@ export default function Submit() {
                                     <div className="row">
                                         <div className="col-lg-6">
                                             <div className="card">
-                                                <div className="card-header">Credit Card</div>
+                                                <div className="card-header">Details</div>
                                                 <div className="card-body">
                                                     <div className="card-title">
-                                                        <h3 className="text-center title-2">Pay Invoice</h3>
+                                                        <h3 className="text-center title-2">main form</h3>
                                                     </div>
                                                     <hr />
                                                     <form action method="post" noValidate="novalidate">
                                                         <div className="form-group">
-                                                            <label htmlFor="cc-payment" className="control-label mb-1">Payment amount</label>
-                                                            <input id="cc-pament" name="cc-payment" type="text" className="form-control" aria-required="true" aria-invalid="false" defaultValue={100.00} />
+                                                            <label className="control-label mb-1">Deaceased name:</label>
+                                                            <input type="text" className="form-control" aria-required="true" aria-invalid="false" />
                                                         </div>
                                                         <div className="form-group has-success">
-                                                            <label htmlFor="cc-name" className="control-label mb-1">Name on card</label>
-                                                            <input id="cc-name" name="cc-name" type="text" className="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card" autoComplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error" />
-                                                            <span className="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true" />
+                                                            <label className="control-label mb-1">Caused of death:</label>
+                                                            <input type="text" className="form-control valid" data-val-required="Please enter the cause of death" aria-required="true" aria-invalid="false"  />
+                                                            <span className="help-block field-validation-valid"  />
                                                         </div>
                                                         <div className="form-group">
-                                                            <label htmlFor="cc-number" className="control-label mb-1">Card number</label>
-                                                            <input id="cc-number" name="cc-number" type="tel" className="form-control cc-number identified visa" defaultValue data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number" autoComplete="cc-number" />
-                                                            <span className="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true" />
+                                                            <label className="control-label mb-1">Facility officer in charge:</label>
+                                                            <input type="text" className="form-control" data-val-required="Please enter the officer in charge" />
+                                                            <span className="help-block" />
                                                         </div>
                                                         <div className="row">
-                                                            <div className="col-6">
+                                                            <div className="col-2">
                                                                 <div className="form-group">
-                                                                    <label htmlFor="cc-exp" className="control-label mb-1">Expiration</label>
-                                                                    <input id="cc-exp" name="cc-exp" type="tel" className="form-control cc-exp" defaultValue data-val="true" data-val-required="Please enter the card expiration" data-val-cc-exp="Please enter a valid month and year" placeholder="MM / YY" autoComplete="cc-exp" />
-                                                                    <span className="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true" />
+                                                                    <label className="control-label mb-1">Sex:</label>
+                                                                    <input id="cc-exp" name="cc-exp" type="tel" className="form-control" />
+                                                                    <span className="help-block" />
                                                                 </div>
                                                             </div>
-                                                            <div className="col-6">
-                                                                <label htmlFor="x_card_code" className="control-label mb-1">Security code</label>
+                                                            <div className="col-4">
+                                                                <label className="control-label mb-1">Date of death:</label>
                                                                 <div className="input-group">
-                                                                    <input id="x_card_code" name="x_card_code" type="tel" className="form-control cc-cvc" defaultValue data-val="true" data-val-required="Please enter the security code" data-val-cc-cvc="Please enter a valid security code" autoComplete="off" />
+                                                                    <input type="text" className="form-control" />
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div>
                                                             <button id="payment-button" type="submit" className="btn btn-lg btn-info btn-block">
-                                                                <i className="fa fa-lock fa-lg" />&nbsp;
-                                <span id="payment-button-amount">Pay $100.00</span>
+                                                                <i className="fa fa-check-circle fa-lg" />&nbsp;
+                                                                    <span id="payment-button-amount">Submit</span>
                                                                 <span id="payment-button-sending" style={{ display: 'none' }}>Sending…</span>
                                                             </button>
                                                         </div>
