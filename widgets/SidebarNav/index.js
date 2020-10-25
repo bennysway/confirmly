@@ -12,7 +12,7 @@ export default function SidebarNav() {
                 </li>
                 <li>
                     <a href="/Dashboard/Verify">
-                        <i class="zmdi zmdi-shield-check animated wobble"></i>Verify</a>
+                        <i className="zmdi zmdi-shield-check animated wobble"></i>Verify</a>
                 </li>
                 <li>
                     <a href="/Dashboard/Records">

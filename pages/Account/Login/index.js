@@ -81,8 +81,8 @@ export default function Login() {
 
     return (
         <div id='loginMain'>
-            <div class={rightPanelActive ? 'container right-panel-active' : 'container'} id="container" ref={container} >
-                <div class="form-container sign-up-container">
+            <div className={rightPanelActive ? 'container right-panel-active' : 'container'} id="container" ref={container} >
+                <div className="form-container sign-up-container">
                     <form onSubmit={handleSignUp}>
                         <h1>Create Account</h1>
 
@@ -93,7 +93,7 @@ export default function Login() {
                         <error>{errorMsg1}</error>
                     </form>
                 </div>
-                <div class="form-container sign-in-container">
+                <div className="form-container sign-in-container">
                     <form onSubmit={handleLogin}>
                         <h1>Sign in</h1>
 
