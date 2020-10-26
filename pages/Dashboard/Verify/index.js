@@ -28,7 +28,7 @@ export default function Verify() {
                                     <span className="help-block" />
                                 </div>
                                 <div>
-                                    <button id="payment-button" type="submit" className="btn btn-lg btn-info btn-block">
+                                    <button id="payment-button" type="submit" className="btn btn-lg btn-info btn-block" style={{ background: '#03bafc' }}>
                                         <i className="fa fa-check-circle fa-lg" />&nbsp;
                                                                     <span id="payment-button-amount">Find</span>
                                         <span id="payment-button-sending" style={{ display: 'none' }}>Sending…</span>

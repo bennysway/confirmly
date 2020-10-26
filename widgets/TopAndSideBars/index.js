@@ -1,8 +1,12 @@
 import useScript from '../../hooks/useScript'
 import SidebarNav from '../../widgets/SidebarNav'
 import styles from './style.module.css'
+import useUser from "../../providers/useUser";
+import Loading from '../Loading';
 
-export default function TopAndSideBar({content}) {
+export default function TopAndSideBar({ content }) {
+
+
 
     /* Jquery JS*/
     useScript("https://code.jquery.com/jquery-3.5.1.slim.min.js")
@@ -49,7 +53,7 @@ export default function TopAndSideBar({content}) {
                             <div className="container-fluid">
                                 <div className="header-mobile-inner">
                                     <a className="logo" href="index.html">
-                                    <h2 className={styles.logo}>Confirmly</h2>
+                                        <h2 className={styles.logo}>Confirmly</h2>
                                     </a>
                                     <button className="hamburger hamburger--slider" type="button">
                                         <span className="hamburger-box">
@@ -163,13 +167,13 @@ export default function TopAndSideBar({content}) {
                     <aside className="menu-sidebar d-none d-lg-block">
                         <div className="logo">
                             <a href="#">
-                            <h2 className={styles.logo}>Confirmly</h2>
+                                <h2 className={styles.logo}>Confirmly</h2>
                             </a>
                         </div>
                         <div className="menu-sidebar__content js-scrollbar1">
                             <nav className="navbar-sidebar">
                                 <SidebarNav />
-                                </nav>
+                            </nav>
                         </div>
                     </aside>
                     {/* END MENU SIDEBAR*/}
@@ -190,108 +194,22 @@ export default function TopAndSideBar({content}) {
                                             <div className="noti-wrap">
                                                 <div className="noti__item js-item-menu">
                                                     <i className="zmdi zmdi-comment-more" />
-                                                    <span className="quantity">1</span>
+                                                    {/*<span className="quantity">1</span>*/}
                                                     <div className="mess-dropdown js-dropdown">
                                                         <div className="mess__title">
-                                                            <p>You have 2 news message</p>
-                                                        </div>
-                                                        <div className="mess__item">
-                                                            <div className="image img-cir img-40">
-                                                                <img src="images/icon/avatar-06.jpg" alt="Michelle Moreno" />
-                                                            </div>
-                                                            <div className="content">
-                                                                <h6>Michelle Moreno</h6>
-                                                                <p>Have sent a photo</p>
-                                                                <span className="time">3 min ago</span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="mess__item">
-                                                            <div className="image img-cir img-40">
-                                                                <img src="images/icon/avatar-04.jpg" alt="Diane Myers" />
-                                                            </div>
-                                                            <div className="content">
-                                                                <h6>Diane Myers</h6>
-                                                                <p>You are now connected on message</p>
-                                                                <span className="time">Yesterday</span>
-                                                            </div>
+                                                            <p>You have no new messages</p>
                                                         </div>
                                                         <div className="mess__footer">
-                                                            <a href="#">View all messages</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="noti__item js-item-menu">
-                                                    <i className="zmdi zmdi-email" />
-                                                    <span className="quantity">1</span>
-                                                    <div className="email-dropdown js-dropdown">
-                                                        <div className="email__title">
-                                                            <p>You have 3 New Emails</p>
-                                                        </div>
-                                                        <div className="email__item">
-                                                            <div className="image img-cir img-40">
-                                                                <img src="images/icon/avatar-06.jpg" alt="Cynthia Harvey" />
-                                                            </div>
-                                                            <div className="content">
-                                                                <p>Meeting about new dashboard...</p>
-                                                                <span>Cynthia Harvey, 3 min ago</span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="email__item">
-                                                            <div className="image img-cir img-40">
-                                                                <img src="images/icon/avatar-05.jpg" alt="Cynthia Harvey" />
-                                                            </div>
-                                                            <div className="content">
-                                                                <p>Meeting about new dashboard...</p>
-                                                                <span>Cynthia Harvey, Yesterday</span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="email__item">
-                                                            <div className="image img-cir img-40">
-                                                                <img src="images/icon/avatar-04.jpg" alt="Cynthia Harvey" />
-                                                            </div>
-                                                            <div className="content">
-                                                                <p>Meeting about new dashboard...</p>
-                                                                <span>Cynthia Harvey, April 12,,2018</span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="email__footer">
-                                                            <a href="#">See all emails</a>
+                                                            <a href="Dashboard/Messages">View all messages</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div className="noti__item js-item-menu">
                                                     <i className="zmdi zmdi-notifications" />
-                                                    <span className="quantity">1</span>
+                                                    {/*<span className="quantity">1</span>*/}
                                                     <div className="notifi-dropdown js-dropdown">
                                                         <div className="notifi__title">
-                                                            <p>You have 3 Notifications</p>
-                                                        </div>
-                                                        <div className="notifi__item">
-                                                            <div className="bg-c1 img-cir img-40">
-                                                                <i className="zmdi zmdi-email-open" />
-                                                            </div>
-                                                            <div className="content">
-                                                                <p>You got a email notification</p>
-                                                                <span className="date">April 12, 2018 06:50</span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="notifi__item">
-                                                            <div className="bg-c2 img-cir img-40">
-                                                                <i className="zmdi zmdi-account-box" />
-                                                            </div>
-                                                            <div className="content">
-                                                                <p>Your account has been blocked</p>
-                                                                <span className="date">April 12, 2018 06:50</span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="notifi__item">
-                                                            <div className="bg-c3 img-cir img-40">
-                                                                <i className="zmdi zmdi-file-text" />
-                                                            </div>
-                                                            <div className="content">
-                                                                <p>You got a new file</p>
-                                                                <span className="date">April 12, 2018 06:50</span>
-                                                            </div>
+                                                            <p>You have no new Notifications</p>
                                                         </div>
                                                         <div className="notifi__footer">
                                                             <a href="#">All notifications</a>
@@ -302,7 +220,7 @@ export default function TopAndSideBar({content}) {
                                             <div className="account-wrap">
                                                 <div className="account-item clearfix js-item-menu">
                                                     <div className="image">
-                                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                        <img src="images/icon/user.svg" alt="John Doe" />
                                                     </div>
                                                     <div className="content">
                                                         <a className="js-acc-btn" href="#">john doe</a>
@@ -311,7 +229,7 @@ export default function TopAndSideBar({content}) {
                                                         <div className="info clearfix">
                                                             <div className="image">
                                                                 <a href="#">
-                                                                    <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                                    <img src="images/icon/user.svg" alt="John Doe" />
                                                                 </a>
                                                             </div>
                                                             <div className="content">

@@ -22,6 +22,24 @@ export default function SidebarNav() {
                     <a href="/Dashboard/Submit">
                         <i className="far fa-check-square" />Submit</a>
                 </li>
+                <hr/>
+                <li>
+                    <a href="/Dashboard/Messages">
+                        <i className="fa fa-inbox" />Messages</a>
+                </li>
+                <li>
+                    <a href="/Dashboard/Notifications">
+                        <i className="fa fa-bell" />Notifications</a>
+                </li>
+                <hr/>
+                <li>
+                    <a href="/Dashboard/Account">
+                        <i className="fa fa-user" />Account</a>
+                </li>
+                <li>
+                    <a href="/Dashboard/Settings">
+                        <i className="fa fa-gear" />Settings</a>
+                </li>
             </ul>
 
         </>

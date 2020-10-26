@@ -14,7 +14,7 @@ export default function Dashboard() {
                     <div className="overview-wrap">
                         <h2 className="title-1">overview</h2>
                         <button className="au-btn au-btn-icon au-btn--blue">
-                            <i className="zmdi zmdi-plus" />add item</button>
+                            <i className="zmdi zmdi-refresh" />refresh</button>
                     </div>
                 </div>
             </div>

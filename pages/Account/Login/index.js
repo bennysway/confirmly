@@ -7,7 +7,7 @@ import React from "react";
 export default function Login() {
     const [rightPanelActive, setRightPanelActive] = useState(false)
     const { mutateUser } = useUser({
-        redirectTo: "/",
+        redirectTo: "/Dashboard",
         redirectIfFound: true,
     });
     const [errorMsg, setErrorMsg] = useState("");
